@@ -1,15 +1,18 @@
 # TinyPy
-standalone python engine with windows service embedded
+Standalone Python engine with Windows service embedded
 
+> This is a portable Python program that's very helpful for creating small tools. It also can run as windows service.
 
-<blockquote>
-<p>
-This is a portable Python program that's very helpful for creating small tools. It also can run as windows service.
-</p>
-</blockquote>
+# Requirements:
+* Python 2.7 Dev
+* Visual C++
 
-<h4><strong>Usage:</strong></h4>
-<pre>
+# Pre-Compiled Binary For Windows:
+Check [/bin](https://github.com/michaelhuang8192/TinyPy/tree/master/bin)
+
+#### Usage:
+
+```
 --app app_type: shell or service, if not set, it runs main.py which is located in appdir
 --appdir current_working_directory: if not set, the program path is used.
 --console: show console
@@ -20,23 +23,24 @@ for service only:
 --service-args arguments: arguments are passed the service instance
 
 TinyPy.stopPending() returns true when there's a stop request
-</pre>
-<br />
+```
 
-<h4><strong>Example:</strong></h4>
-<pre>
+#### Example:
 
-open shell:
+```
+# open shell
 TinyPy.exe --app shell
 
-create service:
-TinyPy.exe --app service --action install --service-name test --service-args &quot;arg0=123&quot;
+# create service
+TinyPy.exe --app service --action install --service-name test --service-args "a=1 b=2"
 
-run script:
-#create a main script named 'main.py'
+# run the default script 'main.py' located under the same folder
 TinyPy.exe
 
-#if the main script is located in path 'c:\www'
-TinyPy.exe --appdir &quot;c:\www&quot;
+# run script 'main.py' located in folder "c:\www"
+TinyPy.exe --appdir "c:\www"
+```
 
-</pre>
+# License
+Free
+
